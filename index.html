@@ -13,8 +13,9 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js" ></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-resource.min.js" ></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js" ></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js" ></script>
 
-    <!-- script type="text/javascript" src="js/ui-bootstrap-0.12.0.min.js" ></script -->
+    <script type="text/javascript" src="js/ui-bootstrap-0.12.0.min.js" ></script>
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -41,10 +42,10 @@
     <link href="css/erocci.css" rel="stylesheet" />
 
     <!-- Custom JS -->
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/services.js"></script>
-    <script type="text/javascript" src="js/directives.js"></script>
-    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/ng/app.js"></script>
+    <script type="text/javascript" src="js/ng/services.js"></script>
+    <script type="text/javascript" src="js/ng/directives.js"></script>
+    <script type="text/javascript" src="js/ng/controllers.js"></script>
     <script type="text/javascript" src="js/ng/utils.js"></script>
   </head>
   <body ng-controller="globalCtrl as global" >    
@@ -59,133 +60,49 @@
 
       <div class="masthead" >
 	<nav class="navbar navbar-default" role="navigation" >
-	  <div class="container" >
-	    <div class="navbar-header" >
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-	      <a class="navbar-brand" ui-sref="home" >
-		<img src="img/logo.png" alt="erocci logo" />
-	      </a>
-	    </div>
-	    <div id="navbar" class="navbar-collapse navbar-right collapse" >
-	      <ul class="nav navbar-nav" >
-		<li ui-sref-active="active"><a ui-sref="home">Home</a></li>
-		<li ui-sref-active="active" class="dropdown" >
-		  <a ui-sref="documentation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
-		    Documentation <span class="caret" ></span>
-		  </a>
-		  <ul class="dropdown-menu" role="menu" >
-		    <li><a ui-sref="getstarted" >Getting Started</a></li>
-		    <li><a ui-sref="reference" >Developer Reference</a></li>
-		  </ul>
-		</li>
-		<li><a href="#download" >Download</a></li>
-		<li class="dropdown" >
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
-		    Community <span class="caret" ></span>
-		  </a>
-		  <ul class="dropdown-menu" role="menu" >
-		    <li><a href="#" >Code</a></li>
-		    <li><a href="#" >Mailing Lists</a></li>
-		    <li><a href="#" >Social</a></li>
-		  </ul>
-		</li>
-		<li><a href="#credits" >Credits</a></li>
-	      </ul>
-	    </div>
+	  <div class="navbar-header" >
+	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+	    <a class="navbar-brand" ui-sref="home" >
+	      <img src="img/logo.png" alt="erocci logo" />
+	    </a>
+	  </div>
+	  
+	  <div id="navbar" class="navbar-collapse navbar-right collapse" >
+	    <ul class="nav navbar-nav" >
+	      <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+	      <li ui-sref-active="active" class="dropdown" >
+		<a ui-sref="documentation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+		  Documentation <span class="caret" ></span>
+		</a>
+		<ul class="dropdown-menu" role="menu" >
+		  <li><a ui-sref="getstarted" >Getting Started</a></li>
+		  <li><a ui-sref="reference" >Developer Reference</a></li>
+		</ul>
+	      </li>
+	      <li><a href="#download" >Download</a></li>
+	      <li class="dropdown" >
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+		  Community <span class="caret" ></span>
+		</a>
+		<ul class="dropdown-menu" role="menu" >
+		  <li><a href="#" >Code</a></li>
+		  <li><a href="#" >Mailing Lists</a></li>
+		  <li><a href="#" >Social</a></li>
+		</ul>
+	      </li>
+	      <li><a href="#credits" >Credits</a></li>
+	    </ul>
 	  </div>
 	</nav>
       </div>
       
-      
       <!-- Content -->
-      <div class="row" >
-	<div class="col-md-9" >
-	  <p>
-	    Lorem ipsum dolor sit amet, consectetur adipiscing
-	    elit. Duis luctus suscipit urna, id commodo enim viverra
-	    vel. Proin feugiat tempus accumsan. Donec ultricies elit sit
-	    amet nibh faucibus semper. In quis mattis nunc. Mauris nisi
-	    augue, elementum non ligula at, ornare placerat mi. Etiam
-	    urna ipsum, accumsan id neque ac, imperdiet convallis
-	    turpis. Vivamus vestibulum tempor risus nec
-	    pellentesque. Vestibulum elementum velit augue, dictum
-	    ullamcorper sem rutrum et. Mauris a velit porttitor,
-	    ultricies nulla et, lobortis nisl. Fusce sit amet bibendum
-	    risus.
-	  </p>
-
-	  <p>
-	    Sed aliquam rhoncus ante non pretium. Cras vel euismod lacus. Nam
-	    commodo vestibulum consectetur. Quisque rhoncus lorem arcu, et
-	    lobortis nisl luctus aliquet. Sed enim velit, tempus in imperdiet
-	    quis, semper vel nisi. Vivamus id facilisis orci, id facilisis
-	    libero. Etiam eu dui eget velit suscipit venenatis sed in
-	    turpis. Pellentesque consectetur sapien mollis mi aliquet
-	    laoreet. Aenean ullamcorper efficitur tortor eu aliquet. Duis ut
-	    feugiat tellus. In porta mi quis sem interdum, in pharetra mauris
-	    commodo.
-	  </p>
-
-	  <p>
-	    Curabitur erat ante, finibus vitae maximus non, rhoncus ut
-	    turpis. In nunc odio, venenatis non ante faucibus, porttitor
-	    tristique quam. Vestibulum facilisis dignissim
-	    lobortis. Nunc eu luctus lacus. In congue pulvinar
-	    consequat. Curabitur elit metus, venenatis id fermentum a,
-	    porta consectetur nisl. Morbi facilisis risus ac elementum
-	    viverra. Maecenas dictum ut turpis sit amet
-	    mollis. Vestibulum pretium sit amet dui vel blandit.
-	  </p>
-
-	  <p>
-	    Ut nunc urna, consectetur ut mauris egestas, vulputate
-	    convallis est. Curabitur lobortis diam eget velit semper
-	    elementum. Vivamus mattis sodales rhoncus. Nullam ante
-	    massa, eleifend in eros ut, laoreet fermentum
-	    tellus. Vestibulum sed nisl eget dui volutpat laoreet nec
-	    vitae arcu. Ut sodales dui dui, sed facilisis odio lobortis
-	    sed. Mauris et magna quam. Suspendisse ornare, massa vel
-	    lobortis vulputate, magna lectus sollicitudin tellus, eget
-	    ullamcorper augue felis et nisi. Cras ut finibus enim. Fusce
-	    vel massa et sem hendrerit mollis. Etiam tortor lectus,
-	    elementum quis odio ut, venenatis accumsan tortor. Nulla ac
-	    odio vel odio lacinia eleifend sit amet fringilla orci.
-	  </p>
-
-	  <p>
-	    Phasellus tortor purus, laoreet quis quam at, vehicula
-	    mattis nisl. Nam lacinia, tortor ac dapibus consequat, metus
-	    dolor maximus orci, et finibus sapien enim et sem. Aliquam
-	    et lacus id ipsum imperdiet ultrices at fringilla metus. In
-	    turpis massa, viverra eu justo nec, pulvinar vestibulum
-	    nibh. Proin aliquam aliquet nibh, eu mattis eros porttitor
-	    at. Sed ligula augue, ultricies id est eu, blandit congue
-	    nibh. Praesent sollicitudin, purus a porttitor elementum,
-	    sem ipsum mattis neque, in eleifend mauris dolor ac
-	    nisl. Curabitur porttitor non mi a dapibus.
-	  </p>
-	</div>
-
-	<div class="col-md-3" >
-	  <div class="sidebar-module" >
-	    <h4>News</h4>
-	    <ol class="list-unstyled">
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	      <li>Plop</li>
-	    </ol>
-	  </div>
-	</div>
+      <div class="content" ui-view >
       </div>
       
       <!-- FOOTER -->
