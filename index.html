@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="erocciApp">
+<html lang="en" ng-app="erocciApp" >
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>erocci website</title>
+    <title>erocci - {{ title }}</title>
 
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -22,6 +22,7 @@
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.2.1/bootstrap-social.min.css" />
     
     <!-- Optional theme -->
     <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" -->
@@ -48,18 +49,18 @@
     <script type="text/javascript" src="js/ng/controllers.js"></script>
     <script type="text/javascript" src="js/ng/utils.js"></script>
   </head>
-  <body ng-controller="globalCtrl as global" >    
+  <body ng-controller="globalCtrl as global">
 
     <div class="container" >
 
       <a href="http://www.ow2.org/view/ActivitiesDashboard/Erocci">
-	<img style="position: absolute; top: 0; right: 0; border: 0;z-index:10000000"
+	<img class="ribbon"
 	     src="http://skins.ow2.org/skins/skinOW2/images/OW2con14-AwardRibbonsInnovationR.png"
 	     alt="OW2con 2014 Innovation Award" />
       </a>
 
       <div class="masthead" >
-	<nav class="navbar navbar-default" role="navigation" >
+	<nav class="navbar navbar-custom" role="navigation" >
 	  <div class="navbar-header" >
 	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -67,16 +68,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-	    <a class="navbar-brand" ui-sref="home" >
+	    <a class="navbar-brand" ui-sref="main" >
 	      <img src="img/logo.png" alt="erocci logo" />
 	    </a>
 	  </div>
 	  
-	  <div id="navbar" class="navbar-collapse navbar-right collapse" >
+	  <div class="navbar-collapse navbar-right collapse" >
 	    <ul class="nav navbar-nav" >
-	      <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+	      <li ui-sref-active="active"><a ui-sref="main">Home</a></li>
 	      <li ui-sref-active="active" class="dropdown" >
-		<a ui-sref="documentation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
 		  Documentation <span class="caret" ></span>
 		</a>
 		<ul class="dropdown-menu" role="menu" >
@@ -84,25 +85,26 @@
 		  <li><a ui-sref="reference" >Developer Reference</a></li>
 		</ul>
 	      </li>
-	      <li><a href="#download" >Download</a></li>
+	      <li><a ui-sref="download" >Download</a></li>
 	      <li class="dropdown" >
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+		<a ui-sref="community" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
 		  Community <span class="caret" ></span>
 		</a>
 		<ul class="dropdown-menu" role="menu" >
-		  <li><a href="#" >Code</a></li>
-		  <li><a href="#" >Mailing Lists</a></li>
-		  <li><a href="#" >Social</a></li>
+		  <li><a ui-sref="code" >Code</a></li>
+		  <li><a ui-sref="ml" >Mailing Lists</a></li>
+		  <li><a ui-sref="social" >Social</a></li>
+		  <li><a ui-sref="related" >Related Projects</a></li>
 		</ul>
 	      </li>
-	      <li><a href="#credits" >Credits</a></li>
+	      <li><a ui-sref="credits" >Credits</a></li>
 	    </ul>
 	  </div>
 	</nav>
       </div>
       
       <!-- Content -->
-      <div class="content" ui-view >
+      <div class="container content" ui-view >
       </div>
       
       <!-- FOOTER -->
