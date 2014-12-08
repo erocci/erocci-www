@@ -29,6 +29,36 @@ angular.module('erocciApp', [
 		templateUrl: 'partials/devref.html',
 		data: { pageTitle: 'Developer Reference' }
 	    })
+	    .state('ref_model', {
+		url: '/devref#model',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
+	    .state('ref_capabilities', {
+		url: '/devref#capabilities',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
+	    .state('ref_http', {
+		url: '/devref#http',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
+	    .state('ref_xmpp', {
+		url: '/devref#xmpp',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
+	    .state('ref_dbus', {
+		url: '/devref#dbus',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
+	    .state('ref_listener', {
+		url: '/devref#listener',
+		templateUrl: 'partials/devref.html',
+		data: { pageTitle: 'Developer Reference' }
+	    })
 	    .state('download', {
 		url: '/download',
 		templateUrl: 'partials/download.html',
