@@ -1,6 +1,7 @@
 body {
     padding-top: 80px;
     padding-bottom: 50px;
+    position: relative;
 }
 
 .navbar {
@@ -28,4 +29,15 @@ body {
     height: 250px;
     width: 370px;
     border: none;
+}
+
+.fixed-nav {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.docs-container {
+    position: relative;
 }

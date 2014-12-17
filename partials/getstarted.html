@@ -1,5 +1,116 @@
 <h1>Getting Started</h1>
 
-<div>
-  Blabla blabla
+<script type="text/javascript" >hljs.initHighlightingOnLoad();</script>
+
+<div class="container bs-docs-container docs-container" du-scroll-container>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="bs-sidebar hidden-print" role="complementary">
+	<ul class="nav bs-sidebar fixed-nav">
+	  <li><a href="#/getstarted#intro" du-scrollspy>Introduction</a></li>
+	  <li><a href="#/getstarted#download" du-scrollspy>Download</a></li>
+	  <li><a href="#/getstarted#reqs" du-scrollspy>Requirements</a></li>
+	  <li><a href="#/getstarted#build" du-scrollspy>Building</a></li>
+	  <li><a href="#/getstarted#design" du-scrollspy>Design</a></li>
+	  <li><a href="#/getstarted#setup" du-scrollspy>Setup</a></li>
+	  <li><a href="#/getstarted#run" du-scrollspy>Run</a></li>
+	  <li><a href="#/getstarted#more" du-scrollspy>Advanced</a></li>
+	</ul>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <section>
+	<h4 id="intro">Introduction</h4>
+
+	<p>
+	  The following instructions will allow to define a REST API
+	  and deploy it with erocci without any code.
+	</p>
+      </section>
+
+      <section id="download">
+	<a type="button" class="btn btn-primary center-block" href="http://github.com/erocci/erocci" style="width: 30%">
+	  Download on Github
+	</a>
+      </section>
+
+      <section id="reqs" >
+	<h4>Requirements</h4>
+
+	<ul>
+	  <li>erlang (>=16b)</li>
+	  <li>rebar</li>
+	  <li>OpenSSL lib + headers</li>
+	  <li>libxml2 lib + headers</li>
+	  <li>libexpat lib + headers</li>
+	</ul>
+
+	<p>
+	  On a Debian box, the following will do the trick:
+	</p>
+
+	<div><code class="bash" >
+	    sudo apt-get install erlang rebar libssl-dev libxml2-dev libexpat1-dev build-essential
+	</code></div>
+      </section>
+
+      <section id="build" >
+	<h4>Building</h4>
+	
+	<div><code class="bash">
+	    make
+	</code></div>
+
+	<p>Simple, isn't it ?</p>
+      </section>
+	
+      <section id="design">
+	<h4>Define your API</h4>
+
+	<p>
+	  Defining your API is as simple as an XML document (<a href="https://github.com/erocci/erocci/blob/master/priv/schemas/occi.xsd">schema</a>):
+	</p>
+
+	<div hljs include="'occi.xml'"></div>
+      </section>
+
+      <section id="setup">
+	<h4>Setup</h4>
+
+	<p>
+	  erocci uses the standard erlang/OTP configuration files, as
+	  described <a href="http://www.erlang.org/doc/man/config.html">here</a>. The
+	  default config file is located
+	  in <span><code>priv/schemas/default.config</code></span>.
+	</p>
+	<p>
+	  For a basic configuration, just replace the schema path to
+	  point to your XML file.
+	</p>
+      </section>
+
+      <section id="run">
+	<h4>Run</h4>
+
+	<p><pre>$ ./start.sh  --help
+Usage: ./start.sh [-d] [-t] [-s] [-x &lt;jid&gt;] [-c &lt;config&gt;] [-h]
+	-d           Print debug messages
+	-q           Print only error messages
+	-t           Start HTTP listener
+	-s           Start HTTPS listener (default: HTTP)
+	-x &lt;jid&gt;     Start XMPP listener with given JID
+	-c &lt;config&gt;  Set alternate config file (default: example.config)
+	-h           Print this help
+	</pre></p>
+      </section>
+
+      <section id="more">
+	<h4>Advamced</h4>
+
+	<p>
+	  For advanced configuration, see <a ui-sref="reference">Developer Reference</a>.
+	</p>
+    </div>
+  </div>
 </div>

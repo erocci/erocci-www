@@ -7,7 +7,9 @@ angular.module('erocciApp', [
     'erocciApp.controllers',
     'erocciApp.directives',
     'erocciApp.utils',
+    'hljs',
     'ngResource',
+    'duScroll',
     'ui.router'
 ])
     .config(function($stateProvider, $urlRouterProvider) {

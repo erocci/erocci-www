@@ -1,4 +1,4 @@
-/*global angular */
+/*global angular, $, window, document */
 
 'use strict';
 
