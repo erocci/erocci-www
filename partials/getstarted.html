@@ -37,7 +37,7 @@
 	<h4>Requirements</h4>
 
 	<ul>
-	  <li>erlang (>=16b)</li>
+	  <li>erlang (>=18)</li>
 	  <li>rebar</li>
 	  <li>OpenSSL lib + headers</li>
 	  <li>libxml2 lib + headers</li>
@@ -49,8 +49,11 @@
 	</p>
 
 	<div><code class="bash" >
-	    sudo apt-get install erlang rebar libssl-dev libxml2-dev libexpat1-dev build-essential
+	    	wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+		sudo apt-get update
+		sudo apt-get install build-essential erlang libxml2-dev
 	</code></div>
+	
       </section>
 
       <section id="build" >
@@ -77,14 +80,28 @@
 	<h4>Setup</h4>
 
 	<p>
-	  erocci uses the standard erlang/OTP configuration files, as
-	  described <a href="http://www.erlang.org/doc/man/config.html">here</a>. The
-	  default config file is located
-	  in <span><code>priv/schemas/default.config</code></span>.
+	  The default config file is located
+	  in <span><code>erocci/config/sys.config</code></span>.
 	</p>
 	<p>
 	  For a basic configuration, just replace the schema path to
 	  point to your XML file.
+	</p>
+	<p>
+		You can read from an absolute path :
+	</p>
+	<p>
+		<pre>
+			{schema, "/absolute/path/to.xml"}
+		</pre>
+	</p>
+	<p>
+		Or from a distant repository :
+	</p>
+	<p>
+		<pre>
+			{schema, {extension, "http://example.org/occi/schema#"}}
+		</pre>
 	</p>
       </section>
 
