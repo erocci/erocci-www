@@ -9,7 +9,7 @@ angular.module('erocciApp', [
     'erocciApp.utils',
     'hljs',
     'ngResource',
-    'duScroll',
+    //'duScroll',
     'ui.router',
     'hc.marked'
 ])
@@ -99,5 +99,10 @@ angular.module('erocciApp', [
 			 data: { pageTitle: 'Credits' }
 		     });
 
-		 
+		 markedProvider.setRenderer({
+		     link: function(href, title, text) {
+			 console.log("LINK: " + href);
+			 return "<a href='" + href + "'" + (title ? " title='" + title + "'" : '') + " >" + text + "</a>";
+		     }
+		 });
 	     }]);
